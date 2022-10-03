@@ -4,15 +4,32 @@ import { conflictError, notFoundError } from "../utils/errorUtils";
 
 export type CreateRecommendationData = Omit<Recommendation, "id" | "score">;
 
-async function insert(createRecommendationData: CreateRecommendationData) {
-	const existingRecommendation = await recommendationRepository.findByName(
-		createRecommendationData.name
-	);
-	if (existingRecommendation)
-		throw conflictError("Recommendations names must be unique");
+// async function insert(createRecommendationData: CreateRecommendationData) {
+// 	const existingRecommendation = await recommendationRepository.findByName(
+// 		createRecommendationData.name
+// 	);
+// 	if (existingRecommendation)
+// 		throw conflictError("Recommendations names must be unique");
 
-	await recommendationRepository.create(createRecommendationData);
-}
+// 	await recommendationRepository.create(createRecommendationData);
+// }
+
+export async function insert(data: {
+	name      :  string;
+	description : string;
+	image      :  string;
+	price      :  number;
+  }) {
+  
+  
+	  await recommendationRepository.create({
+		  name      :  data.name,
+	  description : data.description,
+	  image      :  data.image,
+	  price      :  Number(data.price)
+	  });
+  
+  }
 
 async function upvote(id: number) {
 	await getByIdOrFail(id);
