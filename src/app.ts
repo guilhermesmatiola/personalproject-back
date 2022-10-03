@@ -6,6 +6,7 @@ import { handleErrorsMiddleware } from './middlewares/errorHandlerMiddleware';
 import e2eRouter from './routes/e2eRouter';
 import productRouter from './routes/productRouter';
 import userRouter from './routes/userRouter';
+import recommendationsRouter from './routes/recommendationsRouter'
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV === 'test') {
 }
 
 app.use(productRouter);
+app.use(recommendationsRouter)
 app.use(handleErrorsMiddleware);
 
 export default app;
