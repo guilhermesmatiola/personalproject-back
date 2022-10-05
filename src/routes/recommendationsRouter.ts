@@ -1,9 +1,12 @@
 import { Router } from "express";
 import { recommendationController } from "../controllers/recommendationsController";
+import validateToken from '../middlewares/validateTokenMiddleware';
+import validateSchema from '../middlewares/validateSchemaMiddleware';
+import * as recommendationschema from '../schemas/recommendationsSchema';
 
 const recommendationRouter = Router();
 
-recommendationRouter.post("/recommendations", recommendationController.insert);
+recommendationRouter.post("/recommendations",validateSchema(recommendationschema.recommendationSchema),validateToken, recommendationController.insert);
 recommendationRouter.get("/recommendations", recommendationController.get);
 recommendationRouter.get("/random", recommendationController.random);
 recommendationRouter.get("/top/:amount", recommendationController.getTop);
