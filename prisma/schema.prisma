@@ -26,7 +26,7 @@ model Products {
   name        String @unique
   description String
   image       String
-  price       Int
+  price       Float
 
   @@map("products")
 }
@@ -36,7 +36,7 @@ model Recommendation {
   name        String @unique
   description String
   image       String
-  price       Int
+  price       Float
   score       Int    @default(0)
 
   @@map("recommendation")
