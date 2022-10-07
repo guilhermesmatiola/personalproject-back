@@ -36,7 +36,7 @@ function __createUserInfo() {
     email: faker.internet.email(),
     image: faker.internet.url(),
     password: faker.internet.password(),
-    city: ['SP', 'RJ', 'BH'][Math.floor(Math.random() * (2 - 0 + 1))]
+    city: ['Torre 1', 'Torre 2'][Math.floor(Math.random() * (2 - 0 + 1))]
   };
 }
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc src/server.ts",
+    "build": "tsc src/server.ts && npx prisma migrate deploy",
     "start": "node dist/server.js",
     "dev": "dotenv -e .env nodemon src/server.ts",
     "prisma": "prisma migrate dev",
