@@ -2,9 +2,9 @@
   "name": "back-end",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "build": "tsc src/server.ts && npx prisma migrate deploy",
+    "build": "tsc && npx prisma migrate deploy",
     "start": "node dist/server.js",
     "dev": "dotenv -e .env nodemon src/server.ts",
     "prisma": "prisma migrate dev",

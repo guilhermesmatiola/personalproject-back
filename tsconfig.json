@@ -1,22 +1,21 @@
+// {
+//   "compilerOptions": {
+//     // "target": "es6",  
+//     // "module":"CommonJS",  
+//     "esModuleInterop": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "strict": false,
+//     "skipLibCheck": true,
+//   }
+// }
 {
   "compilerOptions": {
     // "target": "es6",  
-    // "module":"CommonJS",  
+    "module":"CommonJS",  
+    "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "skipLibCheck": true,
   }
 }
-
-// {
-//   "compilerOptions": {
-//     "esModuleInterop": true,
-//     "module": "es6",
-//     "moduleResolution": "node",
-//     "outDir": "dist"
-//   },
-//   "ts-node": {
-//     "esm": true
-//   }
-// }
